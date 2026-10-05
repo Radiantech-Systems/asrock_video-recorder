@@ -93,7 +93,9 @@ clone:
 git clone https://github.com/Radiantech-Systems/asrock_video-recorder.git
 for build purpose on ubuntu :
 sudo apt update
+
 sudo apt install -y build-essential debhelper devscripts
+
 dpkg-buildpackage -us -uc -b
 
 
