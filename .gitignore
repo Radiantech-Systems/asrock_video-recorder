@@ -1,0 +1,52 @@
+# ==============================
+# Autotools generated files
+# ==============================
+aclocal.m4
+autom4te.cache/
+configure
+configure~
+config.h
+config.h.in
+config.h.in~
+config.log
+config.status
+depcomp
+install-sh
+missing
+stamp-h1
+Makefile
+Makefile.in
+
+# ==============================
+# Compiled binaries and objects
+# ==============================
+*.o
+video-recorder
+
+# ==============================
+# Debian build artifacts
+# ==============================
+debian/debhelper-build-stamp
+debian/files
+debian/*.substvars
+debian/*.debhelper
+debian/*.postrm.debhelper
+debian/radian-video-recorder/
+
+# ==============================
+# Generated Debian packages
+# ==============================
+*.deb
+*.buildinfo
+*.changes
+
+# ==============================
+# Runtime data
+# ==============================
+logs/
+recordings/
+events/
+snapshots/
+
+# Autotools dependency files
+.deps/

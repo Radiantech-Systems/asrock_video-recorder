@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	cd files && autoreconf -fi
+	cd files && ./configure
+
+override_dh_auto_build:
+	$(MAKE) -C files
+
+override_dh_auto_install:
+	install -d debian/radian-video-recorder/usr/bin
+
+	install -m 0755 \
+		files/video-recorder \
+		debian/radian-video-recorder/usr/bin/video-recorder
+
+	install -m 0755 \
+		files/videoserver.py \
+		debian/radian-video-recorder/usr/bin/videoserver.py
+
+	install -d debian/radian-video-recorder/root/video_recorder/recordings
+	install -d debian/radian-video-recorder/root/video_recorder/logs
+
+	install -d debian/radian-video-recorder/lib/systemd/system
+
+	install -m 0644 \
+		files/video-recorder.service \
+		debian/radian-video-recorder/lib/systemd/system/video-recorder.service
+
+	install -m 0644 \
+		files/video-server.service \
+		debian/radian-video-recorder/lib/systemd/system/video-server.service
